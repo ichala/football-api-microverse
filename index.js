@@ -26,16 +26,14 @@ const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 app.use(helmet());
 app.use(helmet.frameguard({ action: "deny" }));
-//Require cors and config in case u want restrict api to a specific domain
-// var cors = require("cors");
-// app.use(
-//   cors({
-//     origin: [
-//       "htto://website.com",
-//     ],
-//   })
-// );
-//Require passport and config
+var cors = require("cors");
+app.use(
+  cors({
+    origin: [
+      "*",
+    ],
+  })
+);
 app.set("trust proxy", 1);
 
 const limiter = rateLimit({
