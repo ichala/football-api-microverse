@@ -74,6 +74,9 @@ app.get("*", (req, res) => {
   const welcome = {
     message: "Api Running ",
     status: 200,
+    endpoints :[
+      "https://football-apis.herokuapp.com/api/v1/leagues",
+  ]
   };
   res.status(200).json(welcome);
 });
