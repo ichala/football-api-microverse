@@ -27,13 +27,7 @@ const helmet = require("helmet");
 app.use(helmet());
 app.use(helmet.frameguard({ action: "deny" }));
 var cors = require("cors");
-app.use(
-  cors({
-    origin: [
-      "*",
-    ],
-  })
-);
+app.use(cors())
 app.set("trust proxy", 1);
 
 const limiter = rateLimit({
